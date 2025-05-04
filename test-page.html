@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Enhancer Test Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #4285f4;
+      }
+
+      textarea {
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        font-family: inherit;
+      }
+
+      .instructions {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Text Enhancer Test Page</h1>
+
+    <div class="instructions">
+      <h2>Instructions:</h2>
+      <ol>
+        <li>Install the Text Enhancer extension</li>
+        <li>
+          Configure the extension with your API key and set this page's domain
+          as the target domain
+        </li>
+        <li>Refresh this page</li>
+        <li>Enter some text in the textarea below</li>
+        <li>Click the "Enhance" button that appears on the textarea</li>
+        <li>Watch as your text is enhanced by the LLM API!</li>
+      </ol>
+    </div>
+
+    <h2>Test Textarea:</h2>
+    <textarea placeholder="Enter some text here to enhance...">
+This is a sample text. You can enhance it by clicking the 'Enhance' button provided by the Chrome extension.</textarea
+    >
+
+    <p>
+      Note: If you don't see the "Enhance" button, make sure the extension is
+      properly installed and configured for this domain.
+    </p>
+
+    <script>
+      // This script is just for testing purposes
+      console.log(
+        'Test page loaded. The extension should add an "Enhance" button to the textarea above.'
+      );
+    </script>
+  </body>
+</html>

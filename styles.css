@@ -1,0 +1,62 @@
+#logoPath {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawLine 2s ease forwards;
+}
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+/* .text-enhancer-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Button styles for all contexts */
+/* .promptql-enhancer-btn {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s;
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}  */
+
+/* .promptql-enhancer-btn:hover {
+  background-color: #3367d6;
+} */
+/* 
+.promptql-enhancer-btn:disabled {
+  background-color: #a9a9a9;
+  cursor: not-allowed;
+} */
+
+/* Container for buttons */
+/* .promptql-buttons-container {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* Specific styles for ProomptQL interface */
+/* [data-textarea-id] {
+  margin-bottom: 5px;
+} */ */
+
+/* Dark mode support for Hasura interface */
+/* @media (prefers-color-scheme: dark) {
+  .promptql-enhancer-btn {
+    background-color: #5c6bc0;
+  }
+
+  .promptql-enhancer-btn:hover {
+    background-color: #3f51b5;
+  }
+} */

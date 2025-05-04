@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PNG Icon Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      canvas {
+        border: 1px solid #ccc;
+        margin: 10px;
+      }
+      button {
+        padding: 10px;
+        background: #4285f4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PNG Icon Generator</h1>
+    <p>This page will generate placeholder PNG icons of different sizes.</p>
+
+    <div>
+      <canvas id="canvas16" width="16" height="16"></canvas>
+      <canvas id="canvas48" width="48" height="48"></canvas>
+      <canvas id="canvas128" width="128" height="128"></canvas>
+    </div>
+
+    <button id="generateBtn">Generate Icons</button>
+
+    <script>
+      function drawIcon(canvasId, size) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext("2d");
+
+        // Blue background
+        ctx.fillStyle = "#4285f4";
+        ctx.fillRect(0, 0, size, size);
+
+        // White rectangle for text area
+        ctx.fillStyle = "white";
+        const rectWidth = size * 0.6;
+        const rectHeight = size * 0.3;
+        const rectX = (size - rectWidth) / 2;
+        const rectY = (size - rectHeight) / 2;
+        ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+
+        // Blue lines for text
+        ctx.fillStyle = "#4285f4";
+        const lineHeight = size * 0.05;
+        const lineWidth = rectWidth * 0.8;
+        const lineX = (size - lineWidth) / 2;
+        const line1Y = rectY + rectHeight * 0.3;
+        const line2Y = rectY + rectHeight * 0.7;
+
+        ctx.fillRect(lineX, line1Y, lineWidth, lineHeight);
+        ctx.fillRect(lineX, line2Y, lineWidth * 0.7, lineHeight);
+      }
+
+      function downloadCanvas(canvasId, fileName) {
+        const canvas = document.getElementById(canvasId);
+        const link = document.createElement("a");
+        link.download = fileName;
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      }
+
+      document.getElementById("generateBtn").addEventListener("click", () => {
+        // Draw icons
+        drawIcon("canvas16", 16);
+        drawIcon("canvas48", 48);
+        drawIcon("canvas128", 128);
+
+        // Download icons
+        setTimeout(() => {
+          downloadCanvas("canvas16", "icon16.png");
+          downloadCanvas("canvas48", "icon48.png");
+          downloadCanvas("canvas128", "icon128.png");
+        }, 500);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "ProomptQL Enhancer",
+  "version": "1.0",
+  "description": "Enhances textarea content with LLM capabilities",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://promptql.console.hasura.io/*",
+    "https://*.cdn.hasura.app/*"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "images/daemon16.png",
+      "48": "images/daemon48.png",
+      "128": "images/daemon128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/daemon16.png",
+    "48": "images/daemon48.png",
+    "128": "images/daemon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ]
+    }
+  ]
+}
